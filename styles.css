@@ -54,6 +54,7 @@ label {
     font-size: 1rem;
     color: #333;
     margin-right: 10px;
+    vertical-align: middle;
 }
 
 input[type="text"],
@@ -71,6 +72,7 @@ textarea {
 input[type="checkbox"],
 input[type="radio"] {
     margin-right: 10px;
+    transform: translateY(2px); /* Correction de l'alignement vertical */
 }
 
 /* Aligning checkboxes and radios with labels */
