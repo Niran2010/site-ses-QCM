@@ -5,6 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire sur l'influence de l'ancienneté sur la crédibilité</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        legend {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #444;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            flex: 1;
+        }
+
+        .form-group input[type="checkbox"],
+        .form-group input[type="radio"] {
+            flex: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -13,97 +105,101 @@
         <p><strong>ATTENTION :</strong> cette enquête a pour but d’établir un lien statistique entre ancienneté et crédibilité d’une entreprise.</p>
         
         <!-- Formulaire intégré avec Formspree -->
-        <form action="https://formspree.io/f/mwpkelbn" method="POST">
+        <form action="https://formspree.io/f/{votre-url-id}" method="POST">
             <fieldset>
                 <legend>Informations personnelles (facultatif)</legend>
                 <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom"><br><br>
+                <input type="text" id="nom" name="nom"><br>
 
                 <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom"><br><br>
+                <input type="text" id="prenom" name="prenom"><br>
 
                 <label for="age">Âge (*) :</label>
-                <input type="number" id="age" name="age" required><br><br>
+                <input type="number" id="age" name="age" required><br>
             </fieldset>
 
             <fieldset>
                 <legend>Votre opinion sur l’ancienneté d’une marque</legend>
                 <p>Pensez-vous que l'ancienneté d'une marque influence :</p>
-                <input type="checkbox" id="qualite" name="influence" value="qualité des produits">
-                <label for="qualite">La qualité des produits</label><br>
-
-                <input type="checkbox" id="confiance" name="influence" value="confiance">
-                <label for="confiance">La confiance qui lui est accordable</label><br>
-
-                <input type="checkbox" id="savoir" name="influence" value="savoir ancestral">
-                <label for="savoir">L’ancestralité de son savoir, un savoir transmis de génération en génération</label><br>
-
-                <input type="checkbox" id="preuves" name="influence" value="preuves">
-                <label for="preuves">Le fait qu’elle ait déjà fait ses preuves</label><br>
-
-                <input type="checkbox" id="credibilite" name="influence" value="crédibilité">
-                <label for="credibilite">Sa crédibilité</label><br>
-
-                <input type="checkbox" id="autre" name="influence" value="autre">
-                <label for="autre">Autres (préciser) :</label>
-                <input type="text" id="preciser-autre"><br><br>
-
-                <input type="checkbox" id="rien" name="influence" value="rien">
-                <label for="rien">Rien, l’ancienneté d’une marque ne change rien.</label><br>
+                <div class="form-group">
+                    <input type="checkbox" id="qualite" name="influence" value="qualité des produits">
+                    <label for="qualite">La qualité des produits</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="confiance" name="influence" value="confiance">
+                    <label for="confiance">La confiance qui lui est accordable</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="savoir" name="influence" value="savoir ancestral">
+                    <label for="savoir">L’ancestralité de son savoir, un savoir transmis de génération en génération</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="preuves" name="influence" value="preuves">
+                    <label for="preuves">Le fait qu’elle ait déjà fait ses preuves</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="credibilite" name="influence" value="crédibilité">
+                    <label for="credibilite">Sa crédibilité</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="autre" name="influence" value="autre">
+                    <label for="autre">Autres (préciser) :</label>
+                    <input type="text" id="preciser-autre">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="rien" name="influence" value="rien">
+                    <label for="rien">Rien, l’ancienneté d’une marque ne change rien.</label>
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>Votre opinion générale</legend>
                 <p>Plus généralement vous pensez :</p>
-                <input type="radio" id="plus_credibility" name="credibility" value="plus crédible">
-                <label for="plus_credibility">Que plus une entreprise est ancienne, plus elle est crédible.</label><br>
-
-                <input type="radio" id="no_influence" name="credibility" value="pas crédible">
-                <label for="no_influence">Que l’ancienneté d’une entreprise n’a rien à voir avec sa crédibilité.</label><br>
-
-                <input type="radio" id="variables_plus" name="credibility" value="autres variables">
-                <label for="variables_plus">Que d'autres variables entrent en compte, mais que généralement l'ancienneté rend l'entreprise plus crédible.</label><br>
-
-                <input type="radio" id="variables_no" name="credibility" value="autres variables pas crédible">
-                <label for="variables_no">Que d'autres variables entrent en compte, mais que l'ancienneté n'influe pas spécialement sur sa crédibilité.</label><br>
-
-                <input type="radio" id="autre_credibilite" name="credibility" value="autre">
-                <label for="autre_credibilite">Autre (préciser) :</label>
-                <input type="text" id="preciser-credibilite"><br><br>
+                <div class="form-group">
+                    <input type="radio" id="plus_credibility" name="credibility" value="plus crédible">
+                    <label for="plus_credibility">Que plus une entreprise est ancienne, plus elle est crédible.</label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="no_influence" name="credibility" value="pas crédible">
+                    <label for="no_influence">Que l’ancienneté d’une entreprise n’a rien à voir avec sa crédibilité.</label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="variables_plus" name="credibility" value="autres variables">
+                    <label for="variables_plus">Que d'autres variables entrent en compte, mais que généralement l'ancienneté rend l'entreprise plus crédible.</label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="variables_no" name="credibility" value="autres variables pas crédible">
+                    <label for="variables_no">Que d'autres variables entrent en compte, mais que l'ancienneté n'influe pas spécialement sur sa crédibilité.</label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="autre_credibilite" name="credibility" value="autre">
+                    <label for="autre_credibilite">Autre (préciser) :</label>
+                    <input type="text" id="preciser-credibilite">
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>Vos préférences</legend>
                 <p>En toute honnêteté, vous :</p>
-                <input type="checkbox" id="acheter_marque" name="preference" value="marque">
-                <label for="acheter_marque">Préférez acheter des produits de marque.</label><br>
-
-                <input type="checkbox" id="marque_ancienne" name="preference" value="marque ancienne">
-                <label for="marque_ancienne">De marque ancienne.</label><br>
-
-                <input type="checkbox" id="sensitive_since" name="preference" value="Since XXXX">
-                <label for="sensitive_since">Êtes sensible au « Since XXXX ».</label><br>
-
-                <input type="checkbox" id="no_marque" name="preference" value="pas de marque">
-                <label for="no_marque">Ne regardez pas la marque d’un produit.</label><br>
-
-                <input type="checkbox" id="no_old_marque" name="preference" value="pas de marques anciennes">
-                <label for="no_old_marque">Ne préférez pas spécialement les marques anciennes.</label><br>
-
-                <input type="checkbox" id="no_since" name="preference" value="pas sensible au Since">
-                <label for="no_since">N’êtes pas sensible au « Since XXXX ».</label><br><br>
-            </fieldset>
-
-            <fieldset>
-                <legend>Vos remarques</legend>
-                <label for="remarques">Si vous avez des solutions d'améliorations ou toutes autres remarques :</label><br>
-                <textarea id="remarques" name="remarques" rows="4" cols="50"></textarea><br><br>
-            </fieldset>
-
-            <button type="submit">Envoyer</button>
-        </form>
-    </div>
-
-    <script src="scripts.js"></script>
-</body>
-</html>
+                <div class="form-group">
+                    <input type="checkbox" id="acheter_marque" name="preference" value="marque">
+                    <label for="acheter_marque">Préférez acheter des produits de marque.</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="marque_ancienne" name="preference" value="marque ancienne">
+                    <label for="marque_ancienne">De marque ancienne.</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="sensitive_since" name="preference" value="Since XXXX">
+                    <label for="sensitive_since">Êtes sensible au « Since XXXX ».</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="no_marque" name="preference" value="pas de marque">
+                    <label for="no_marque">Ne regardez pas la marque d’un produit.</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="no_old_marque" name="preference" value="pas de marques anciennes">
+                    <label for="no_old_marque">Ne préférez pas spécialement les marques anciennes.</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="no_since" name="preference" value="pas
